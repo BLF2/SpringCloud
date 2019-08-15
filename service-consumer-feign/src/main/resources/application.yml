@@ -1,0 +1,13 @@
+server:
+  port: 7002
+
+#配置eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka,http://localhost:9002/eureka
+
+#服务名称
+spring:
+  application:
+    name: service-consumer-feign

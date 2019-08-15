@@ -1,0 +1,15 @@
+server:
+  port: 9001
+
+eureka:
+  instance:
+    hostname: peer1 #配置Eureka Server的名字（地址）
+  client:
+    register-with-eureka: false  #自己不作为服务注册自己
+    fetch-registry: false        #不拉取服务注册信息
+    service-url:
+      defaultZone: http://peer2:9002/eureka/ #把当前注册中心告诉peer2
+
+spring:
+  application:
+    name: eureka-server-${server.port} #这个名字尽量配置，方便我们记忆和查看
